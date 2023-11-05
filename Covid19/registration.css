@@ -1,0 +1,80 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Registration Page Styles */
+.registration-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.registration-header {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.registration-form {
+    text-align: left;
+}
+
+.registration-label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.registration-input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.registration-input:focus {
+    outline: 2px solid #FF4F5B; /* Red color */
+}
+
+.registration-button {
+    background-color: #FF4F5B; /* Red color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+/* Center the Registration Button */
+.registration-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.registration-button:hover {
+    background-color: #FF6666; /* Lighter red on hover */
+}

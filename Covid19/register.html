@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <div class="registration-container">
+        <h1 class="registration-header">Registration</h1>
+        <form class="registration-form" action="connect.php" method="POST" onsubmit="return validateForm()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="registration-input" required minlength="5"><br>
+            <span id="username-error" class="error"></span><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="registration-input" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="registration-input" required 
+                   pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+                   title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one digit."><br>
+            <span id="password-error" class="error"></span><br>
+
+            <div class="registration-button-container">
+                <input type="submit" value="Register" class="registration-button">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var usernameError = document.getElementById("username-error");
+            var passwordError = document.getElementById("password-error");
+
+            // Reset error messages
+            usernameError.innerHTML = "";
+            passwordError.innerHTML = "";
+
+            // Test Cases
+            if (username.length < 5) {
+                usernameError.innerHTML = "Username is too short";
+                return false;
+            }
+
+            if (username === "JohnDoe123") {
+                usernameError.innerHTML = "Username is already taken";
+                return false;
+            }
+
+            if (password.length < 8) {
+                passwordError.innerHTML = "Password must be at least 8 characters long";
+                return false;
+            }
+
+            if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(password)) {
+                passwordError.innerHTML = "Password must contain at least one uppercase letter, one lowercase letter, and one digit.";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
